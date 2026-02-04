@@ -1,13 +1,7 @@
 databaseChangeLog:
-  - changeSet:
-      id: 1
-      author: Artur
-      changes:
-        - createTable:
-            tableName: example
-            columns:
-              - column:
-                  name: id
-                  type: BIGSERIAL
-                  constraints:
-                    primaryKey: true
+  - include:
+      file: db/changelog/001-create-documents-table.yaml
+  - include:
+      file: db/changelog/002-create-document-history-table.yaml
+  - include:
+      file: db/changelog/003-create-approval-registry-table.yaml
